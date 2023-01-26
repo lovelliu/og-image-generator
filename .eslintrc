@@ -1,3 +1,6 @@
 {
-  "extends": "@lovelliu"
+  "extends": "@lovelliu",
+  "rules": {
+    "react/no-unknown-property": "off"
+  }
 }
