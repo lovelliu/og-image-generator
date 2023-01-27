@@ -7,7 +7,7 @@ export const config = {
 
 export default function handler(req: NextRequest) {
   try {
-    const defaultBackgroundImage = 'https://my-picture-bed-1304169582.cos.ap-nanjing.myqcloud.com/uPic/bg.png'
+    const defaultBackgroundImage = 'https://my-picture-bed-1304169582.cos.ap-nanjing.myqcloud.com/uPic/bg-image.png'
     const defaultTitle = 'A concise and lightweight blog.'
     const { searchParams } = new URL(req.url)
     // ?title=<title>
