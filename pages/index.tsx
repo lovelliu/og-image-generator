@@ -66,7 +66,7 @@ export default function Page() {
                     <Input label="title" id="title" />
                   </div>
                   <div>
-                    <img src={imageLink} className="w-full bg-gray-500" width="800" height="400" />
+                    <img key={imageLink} src={imageLink} className="w-full bg-gray-500" width="800" height="400" />
                     <div className="mt-10 flex gap-2">
                       <Button className="w-2/3">Generate</Button>
                       <ButtonLink href={link} className="w-1/3">New Tab</ButtonLink>
