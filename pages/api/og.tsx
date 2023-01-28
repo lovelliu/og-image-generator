@@ -21,6 +21,8 @@ export default function handler(req: NextRequest) {
     )
     const defaultTitle = 'A concise and lightweight blog.'
     const { searchParams } = new URL(req.url)
+    // ?theme=<theme>
+    const theme = searchParams.get('theme')?.slice(0, 100)
     // ?title=<title>
     const title = searchParams.get('title')?.slice(0, 100)
     // ?backgroundImage=<backgroundImage>
@@ -35,7 +37,7 @@ export default function handler(req: NextRequest) {
     return new ImageResponse(
       (
         <div
-          tw="
+          tw={`
             flex
             flex-col
             items-center
@@ -43,15 +45,19 @@ export default function handler(req: NextRequest) {
             pt-25
             w-full
             h-full
-          "
+            ${theme === 'dark' ? 'text-white' : ''}
+          `}
         >
           <img src={backgroundImage || defaultBackgroundImage} tw="absolute w-[800px]" alt="background" />
           <div
             tw="flex items-center"
           >
-            <img src={logo || defaultLogo} width="75" alt="logo" tw="rounded-full" />
+            <img src={logo || defaultLogo} width="75" alt="logo" tw="rounded-full border border-gray-400" />
             <div
-              tw="ml-4 border-l-2 border-l-gray-500 pl-4 pr-1 text-2xl"
+              tw={`
+                ml-4 border-l-2 pl-4 pr-1 text-2xl
+                ${theme === 'dark' ? 'border-l-white' : 'border-l-gray-500'}
+              `}
             >
                 { author || defaultAuthor}
             </div>
