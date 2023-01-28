@@ -18,7 +18,7 @@ function Input(props: InputProps) {
       <input
         type="text"
         id={id}
-        className="mt-1 relative w-full border-gray-300 shadow-sm rounded-md sm:text-sm focus:ring-red-500"
+        className="mt-1 relative w-full border-gray-300 shadow-sm rounded-md focus:ring-red-500"
         {...register(id)}
         {...rest}
       />
