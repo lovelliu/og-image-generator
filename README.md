@@ -32,6 +32,10 @@ It looks like the following:
 3. Connect [Vercel for GitHub](https://vercel.com/github) to automatically deploy each time you `git push`
 4. Add the following to the vercel environment variables: **Settings > Environment Variables**
 
+| Name                       | Value                   |
+| -------------------------- | ----------------------- |
+| NEXT_PUBLIC_DEPLOYMENT_URL | https://deployment.domain.com |
+
 ## License
 
 [MIT](./LICENSE) License © 2023 [Lovell Liu](https://github.com/lovelliu)
