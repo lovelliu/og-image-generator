@@ -23,6 +23,8 @@ export default function handler(req: NextRequest) {
     const { searchParams } = new URL(req.url)
     // ?theme=<theme>
     const theme = searchParams.get('theme')?.slice(0, 100)
+    // ?border=<border>
+    const border = searchParams.get('border')?.slice(0, 100) || 'solid'
     // ?title=<title>
     const title = searchParams.get('title')?.slice(0, 100)
     // ?backgroundImage=<backgroundImage>
@@ -52,11 +54,17 @@ export default function handler(req: NextRequest) {
           <div
             tw="flex items-center"
           >
-            <img src={logo || defaultLogo} width="75" alt="logo" tw="rounded-full border border-gray-400" />
+            <img src={logo || defaultLogo} width="75" alt="logo"
+              tw={`
+                rounded-full
+                ${border === 'solid' ? 'border border-gray-400' : ''}
+              `}
+            />
             <div
               tw={`
-                ml-4 border-l-2 pl-4 pr-1 text-2xl
+                ml-4 pl-4 pr-1 text-2xl
                 ${theme === 'dark' ? 'border-l-white' : 'border-l-gray-500'}
+                ${border === 'solid' ? 'border-l-2' : ''}
               `}
             >
                 { author || defaultAuthor}
