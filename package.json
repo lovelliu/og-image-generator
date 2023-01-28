@@ -10,6 +10,7 @@
   "dependencies": {
     "@vercel/og": "latest",
     "next": "latest",
+    "query-string": "^8.1.0",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "^7.42.1"
