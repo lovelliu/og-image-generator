@@ -8,9 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/og": "latest",
+    "@vercel/og": "^0.0.18",
     "next": "latest",
-    "query-string": "^8.1.0",
+    "query-string": "^7.1.1",
     "react": "latest",
     "react-dom": "latest",
     "react-hook-form": "^7.42.1"
