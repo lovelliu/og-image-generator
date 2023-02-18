@@ -35,7 +35,7 @@ export default function Page() {
       { skipEmptyString: true },
     )
     setLink(queryURL)
-  }, [formData])
+  }, [formData, url])
   return (
     <>
       <main>
