@@ -46,7 +46,7 @@ export default function Page() {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mt-10 grid md:grid-cols-[2fr,3fr] gap-8 items-center">
                   <div className="flex flex-col gap-3 md:max-w-sm">
-                    <div className="grid grid-cols-[1fr,1fr,1fr] gap-2">
+                    <div className="grid grid-cols-[1fr,1fr,1fr,1fr] gap-1">
                       <Select id="ogType" label="ogType" helperText="api route" className="w-full">
                         <option value="og">og</option>
                       </Select>
@@ -56,6 +56,10 @@ export default function Page() {
                       </Select>
                       <Select id="border" label="border" className="w-full" >
                         <option value="solid">solid</option>
+                        <option value="none">none</option>
+                      </Select>
+                      <Select id="rounded" label="rounded" className="w-full" helperText="border rounded">
+                        <option value="rounded">rounded</option>
                         <option value="none">none</option>
                       </Select>
                     </div>

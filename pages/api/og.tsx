@@ -25,6 +25,8 @@ export default function handler(req: NextRequest) {
     const theme = searchParams.get('theme')?.slice(0, 100)
     // ?border=<border>
     const border = searchParams.get('border')?.slice(0, 100) || 'solid'
+    // ?rounded=<rounded>
+    const rounded = searchParams.get('rounded')?.slice(0, 100) || 'rounded'
     // ?title=<title>
     const title = searchParams.get('title')?.slice(0, 100)
     // ?backgroundImage=<backgroundImage>
@@ -54,10 +56,11 @@ export default function handler(req: NextRequest) {
           <div
             tw="flex items-center"
           >
-            <img src={logo || defaultLogo} width="75" alt="logo"
+            <img src={logo || defaultLogo} width="80" alt="logo"
               tw={`
-                rounded-full
+                ${rounded === 'rounded' ? 'rounded-full' : 'rounded-none'}
                 ${border === 'solid' ? 'border border-gray-400' : ''}
+                shrink-0
               `}
             />
             <div
