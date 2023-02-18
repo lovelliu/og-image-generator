@@ -28,9 +28,9 @@ export default function handler(req: NextRequest) {
     // ?title=<title>
     const title = searchParams.get('title')?.slice(0, 100)
     // ?backgroundImage=<backgroundImage>
-    const backgroundImage = searchParams.get('backgroundImage')?.slice(0, 200)
+    const backgroundImage = searchParams.get('backgroundImage')?.slice(0)
     // ?logo=<logo>
-    const logo = searchParams.get('logo')?.slice(0, 200)
+    const logo = searchParams.get('logo')?.slice(0)
     // ?author=<author>
     const author = searchParams.get('author')?.slice(0, 100)
     // ?extra=<extra>
